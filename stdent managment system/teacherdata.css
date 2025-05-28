@@ -1,0 +1,218 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Top Bar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.top-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.top-bar .btn-search {
+    padding: 5px 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    text-align: center;
+    background-color: #495057;
+    border-radius: 5px;
+}
+
+.sidebar ul li.active, .sidebar ul li:hover {
+    background-color: #007bff;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    margin-top: 60px;
+    padding: 20px;
+    width: calc(100% - 270px);
+}
+
+/* Sections */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.dashboard-cards, .timetable-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+/* Profile */
+.profile-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+/* Attendance Section */
+.section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Class Selection Dropdown */
+.class-selection {
+    margin-bottom: 20px;
+}
+
+.class-selection label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.class-selection select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.class-selection select:focus {
+    border-color: #007bff;
+}
+
+/* Attendance Sheet Table */
+.attendance-sheet {
+    margin-top: 20px;
+}
+
+.attendance-sheet table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.attendance-sheet table thead th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.attendance-sheet table tbody td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.attendance-sheet table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.attendance-sheet table tbody tr:hover {
+    background-color: #eaf2ff;
+}
+
+/* Checkbox Styling */
+.attendance-sheet input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Submit Button */
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-primary:active {
+    background-color: #004085;
+}

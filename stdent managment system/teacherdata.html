@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="teacherdata.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <h1>Teacher Dashboard</h1>
+        </div>
+        <div class="top-bar-right">
+            <input 
+                type="text" 
+                id="studentSearchBar" 
+                placeholder="Search for a student..." 
+                onkeyup="searchStudent()">
+            <button class="btn-search">🔍</button>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li onclick="showSection('home')" class="active">🏠 Dashboard</li>
+            <li onclick="showSection('timetable')">📅 Timetable</li>
+            <li onclick="showSection('attendance')">✅ Attendance</li>
+            <li onclick="showSection('assignments')">📝 Assignments</li>
+            <li onclick="showSection('profile')">👤 Profile</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h2>Welcome, Teacher!</h2>
+            <p>Track your schedule, manage attendance, and more.</p>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Today's Classes</h3>
+                    <p>3 Scheduled</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Assignments</h3>
+                    <p>5 to Review</p>
+                </div>
+                <div class="card">
+                    <h3>Average Attendance</h3>
+                    <p>92%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timetable Section -->
+        <section id="timetable" class="section">
+            <h2>Weekly Timetable</h2>
+            <div class="timetable-cards">
+                <div class="card">
+                    <h3>Monday</h3>
+                    <p>9:00 AM - Math</p>
+                    <p>11:00 AM - Physics</p>
+                </div>
+                <div class="card">
+                    <h3>Tuesday</h3>
+                    <p>10:00 AM - Chemistry</p>
+                    <p>1:00 PM - Biology</p>
+                </div>
+                <div class="card">
+                    <h3>Wednesday</h3>
+                    <p>9:00 AM - History</p>
+                    <p>11:30 AM - English</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="attendance" class="section">
+            <h2>Mark Attendance</h2>
+        
+            <!-- Class Selection Dropdown -->
+            <div class="class-selection">
+                <label for="classSelect">Select Class:</label>
+                <select id="classSelect" onchange="loadAttendanceSheet()">
+                    <option value="">-- Select Class --</option>
+                    <option value="classA">Data-Science A</option>
+                    <option value="classB">Cse A</option>
+                    <option value="classC">Cse C</option>
+                </select>
+            </div>
+        
+            <!-- Attendance Sheet -->
+            <div id="attendanceSheet" class="attendance-sheet" style="display: none;">
+                <h3>Attendance Sheet</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>USN</th>
+                            <th>Present</th>
+                            <th>Absent</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTableBody">
+                        <!-- Dynamic Rows Will Be Inserted Here -->
+                    </tbody>
+                </table>
+                <button class="btn-primary" onclick="submitAttendance()">Submit Attendance</button>
+            </div>
+        </section>
+        
+
+        <!-- Assignments Section -->
+        <section id="assignments" class="section">
+            <h2>Manage Assignments</h2>
+            <div class="assignment-progress">
+                <canvas id="assignmentChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <h2>Your Profile</h2>
+            <div class="profile-card">
+                <img src="profile.jpg" alt="Profile Photo">
+                <div>
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Email:</strong> john.doe@example.com</p>
+                    <p><strong>Subject:</strong> Mathematics</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="teacherdata.js"></script>
+</body>
+</html>

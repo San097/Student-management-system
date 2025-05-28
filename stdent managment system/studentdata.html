@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="studentdata.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>Student Portal</h2>
+        <ul>
+            <li onclick="showSection('home')">🏠 Home</li>
+            <li onclick="showSection('timetable')">📅 Timetable</li>
+            <li onclick="showSection('assignments')">📝 Assignments</li>
+            <li onclick="showSection('marks')">📊 Marks</li>
+            <li onclick="showSection('profile')">👤 Profile</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h1>Welcome, Student!</h1>
+            <p>Stay organized and achieve your goals.</p>
+            <div class="overview-cards">
+                <div class="card">
+                    <h3>Upcoming Classes</h3>
+                    <p>3 classes today</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Assignments</h3>
+                    <p>2 assignments due</p>
+                </div>
+                <div class="card">
+                    <h3>Average Marks</h3>
+                    <p>85%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timetable Section -->
+        <section id="timetable" class="section">
+            <h2>Your Timetable</h2>
+            <table class="timetable">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Subject</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Mathematics</td>
+                        <td>9:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Physics</td>
+                        <td>11:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>English</td>
+                        <td>10:00 AM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Assignments Section -->
+        <section id="assignments" class="section">
+            <h2>Your Assignments</h2>
+            <div class="assignment-list">
+                <div class="assignment-card">
+                    <h3>Math Homework</h3>
+                    <p>Due: 2024-12-14</p>
+                    <p>Solve 20 algebraic problems.</p>
+                    <button onclick="markAssignment(this)">Mark as Done</button>
+                </div>
+                <div class="assignment-card">
+                    <h3>Science Experiment</h3>
+                    <p>Due: 2024-12-18</p>
+                    <p>Prepare a project on electricity.</p>
+                    <button onclick="markAssignment(this)">Mark as Done</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marks Section -->
+        <section id="marks" class="section">
+            <h2>Marks Overview</h2>
+            <canvas id="marksChart"></canvas>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <h2>Your Profile</h2>
+            <div class="profile">
+                <img src="profile-pic.jpg" alt="Student Photo">
+                <div>
+                    <p><strong>Name:</strong> Jane Doe</p>
+                    <p><strong>Email:</strong> jane.doe@student.com</p>
+                    <p><strong>Grade:</strong> 10</p>
+                    <p><strong>Subjects:</strong> Math, Science, English</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="studentdata.js"></script>
+</body>
+</html>
